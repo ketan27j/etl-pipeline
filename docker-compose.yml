@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  source1_etl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/etl/source1:/app/src/etl/source1
+      - ./logs:/app/logs
+    environment:
+      - ENV=development
+
+  source2_etl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/etl/source2:/app/src/etl/source2
+      - ./logs:/app/logs
+    environment:
+      - ENV=development
+
+networks:
+  default:
+    driver: bridge
+
+volumes:
+  logs:

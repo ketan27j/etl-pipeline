@@ -1,0 +1,6 @@
+pandas
+sqlalchemy
+logging
+pytest
+psycopg2-binary
+setuptools
